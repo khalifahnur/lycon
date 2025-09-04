@@ -10,6 +10,7 @@ import Footer from "./LandingPage/Footer";
 import Header from "./LandingPage/Header";
 import WhyChooseLycan from "./LandingPage/WhyUs";
 
+
 export default function Landing() {
   return (
     <>
