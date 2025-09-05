@@ -2,13 +2,13 @@ import React from "react";
 import HeroSection from "./LandingPage/HeroSection";
 import Spornsors from "./LandingPage/Spornsors";
 import CardCorousel from "./LandingPage/CardCorousel";
-import About from "./LandingPage/About";
 import Stats from "./LandingPage/Stats";
 import Cta from "./LandingPage/Cta";
-import Services from "./LandingPage/Services";
 import Footer from "./LandingPage/Footer";
 import Header from "./LandingPage/Header";
-import WhyChooseLycan from "./LandingPage/WhyUs";
+import LycanTeam from "./LandingPage/LycanTeam";
+import Service from "./LandingPage/Service";
+import About from "./LandingPage/About";
 
 
 export default function Landing() {
@@ -22,10 +22,10 @@ export default function Landing() {
       <HeroSection />
       <Spornsors />
       <CardCorousel /> 
+      <LycanTeam />
+      <Stats />
+      <Service />
       <About />
-      <Stats /> 
-      <Services />
-      <WhyChooseLycan />
       <Cta /> 
     </main>
     <Footer />

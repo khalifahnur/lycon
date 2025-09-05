@@ -1,0 +1,87 @@
+  const teamData = {
+    founders: [
+        {
+        id: "robert",
+        name: "Robert Macharia",
+        role: "Founder",
+        location: "Kenya",
+        highlights: [
+          "20+ Years Legal",
+          "Corporate Governance Expert",
+          "SportPesa Global Head",
+          "Football Administrator",
+        ],
+        image: "https://res.cloudinary.com/dfuh1q6ic/image/upload/c_crop,w_100,h_133,ar_3:4,e_improve/v1756997528/Screenshot_from_2025-09-04_17-40-23_fvec8w.png",
+        shortBio: "Seasoned legal professional with over 20 years of experience in commercial litigation, gaming, ICT regulation, and corporate governance.",
+        fullBio: "Robert Macharia is a seasoned legal professional with over 20 years of progressively senior experience. His expertise covers commercial litigation, gaming and ICT regulation, and corporate governance. An accredited Corporate Governance Auditor, CPS-K, and Notary Public, Robert has represented clients in Kenya’s High Court and Court of Appeal and actively contributes to professional bodies including the Law Society of Kenya and Institute of Certified Public Secretaries. Over the years he has built a distinguished career spanning corporate law, litigation, governance, and regulatory compliance. Currently serving as Global Head of Legal, Director, and Company Secretary at SportPesa Kenya and Techpitch Ltd, he provides strategic legal oversight across Africa and Europe. This includes contract negotiation, cross-border structuring, and regulatory engagement. He previously co-founded and managed a law firm with a focus on securities, conveyancing, and dispute resolution. Robert is a passionate football administrator. He is the founder of Murang’a Seal FC and St. Sebastian Sports School, and Chairperson of the Federation of Kenyan Football (FKF) Murang’a County Branch, and key national committees of the Federation. His expertise bridges law, business, and sport, and is underpinned by a commitment to integrity, strategic leadership, and community development.",
+        gradient: "from-purple-600 to-pink-600",
+      },
+      {
+        id: "gordon",
+        name: "Gordon Denoon",
+        role: "Founder",
+        location: "Kenya",
+        highlights: [
+          "20+ Years Experience",
+          "Strategic Planning Expert",
+          "7+ Years in Kenya",
+          "Disaster Preparedness",
+        ],
+        image: "https://res.cloudinary.com/dfuh1q6ic/image/upload/c_crop,w_100,e_improve,e_sharpen/v1756997521/Screenshot_from_2025-09-04_17-40-50_j5zoh8.png",
+        shortBio: "Visionary leader with over twenty years of experience transforming complex challenges into actionable strategies.",
+        fullBio: "Gordon Denoon brings more than twenty years of seasoned experience in strategic planning, operations management, and business development. Born in Uganda and raised in Australia, Gordon’s career has been built around translating complex challenges into clear, actionable strategies across public service and non-governmental sectors. His academic background and professional journey are rooted in fostering resilience and innovation, with a passion for disaster preparedness, response, and recovery. Having lived and worked in Kenya for over seven years, Gordon offers a deep understanding of local dynamics, cultural sensitivities, and the business environment. His proven strengths in stakeholder engagement, operational planning, project design, and program management are complemented by a disciplined approach to risk mitigation and problem-solving. Committed to staying at the forefront of global best practices and resilience-building methodologies, Gordon's diverse experience and collaborative leadership style make him exceptionally equipped to drive St. Sebastian Sports Academy's growth and operational excellence in Kenya and the broader East African region.",
+        gradient: "from-blue-600 to-indigo-700",
+      }
+    ],
+    management: [
+      {
+        id: "christine",
+        name: "Christine Macharia Denoon",
+        role: "Chief Executive Officer (CEO)",
+        location: "Kenya",
+        highlights: [
+          "15+ Years Leadership",
+          "CCMAP Accredited",
+          "RMIA Member",
+          "Strategic Partnerships",
+        ],
+        image: "https://res.cloudinary.com/dfuh1q6ic/image/upload/c_crop,w_100,h_133,ar_3:4,e_improve,e_sharpen/v1756997521/Screenshot_from_2025-09-04_17-41-06_ro7akw.png",
+        shortBio: "Leadership excellence in commercial strategy, risk management, and strategic procurement.",
+        fullBio: "Christine Macharia Denoon brings over fifteen years of leadership excellence in commercial strategy, risk management, and strategic procurement to her role as Chief Executive Officer. She has overseen large and complex programmes across diverse international contexts, demonstrating a rare ability to translate governance frameworks into measurable competitive advantages. Christine holds an Advanced Contract and Commercial Practitioner (CCMAP) accreditation, underscoring her strong commercial acumen and her expertise in contract negotiation, supplier relationship management, and stakeholder engagement. Her career is marked by a focus on high-value partnerships, business development initiatives, innovative funding models, and data-driven improvements to contract performance. Christine’s comprehensive skill set extends to building strategic partnerships with leaders, suppliers, and communities, fostering collaborative solution design and consensus-driven decision-making. A proactive risk manager and professional member of the Risk Management Institution of Australasia (RMIA) she ensures contractual obligations transform into actionable deliverables that drive cost savings, mitigate risks, and achieve successful project execution. Her management expertise, combined with a people-focused leadership style, fosters continuous improvement, collaboration, and sustainable growth, positioning Lycan International Limited for operational excellence and long-term success.",
+        gradient: "from-emerald-500 to-teal-600",
+      },
+      {
+        id: "bernard",
+        name: "Bernard Chauro",
+        role: "Chief Financial Officer (CFO)",
+        location: "Kenya",
+        highlights: [
+          "10+ Years Finance",
+          "Internal Auditor",
+          "Strategic Budgeting",
+          "Process Optimization",
+        ],
+        image: "https://res.cloudinary.com/dfuh1q6ic/image/upload/b_rgb:FFFFFF/c_crop,w_125,h_125,e_improve/v1756997521/Screenshot_from_2025-09-04_17-41-20_t08dtd.png",
+        shortBio: "Performance-driven operational manager, internal auditor, and financial accountant.",
+        fullBio: "Bernard Chauro is a performance-driven operational manager, internal auditor, and financial accountant with over a decade of progressive experience in enhancing operational integrity and driving organizational performance. His educational foundation in finance and accounting, coupled with extensive practical exposure, has equipped him with a keen analytical rigor and creative problem-solving abilities. Throughout his career, Bernard has demonstrated expertise in designing audit programs, ensuring compliance, uncovering process optimization opportunities, mastering financial accounting, tax preparation, and strategic budgeting. His data-driven approach to financial planning consistently delivers measurable improvements in efficiency and cost control across various organizations. As a natural leader and mentor, Bernard fosters high-performing teams through clear communication, empowerment, and hands-on guidance, translating complex financial and operational concepts into concise, actionable insights for a diverse range of stakeholders. His adaptability, self-motivation, and commitment to staying updated with industry trends and regulatory changes position him as the ideal Chief Financial Officer to lead St. Sebastian Sports Academy’s financial strategy with discipline, foresight, and excellence.",
+        gradient: "from-orange-500 to-red-500",
+      },
+      {
+        id: "tom",
+        name: "Tom Sipul",
+        role: "Chief Operating Officer (COO)",
+        location: "Kenya",
+        highlights: [
+          "20+ Years Leadership",
+          "MBA Qualified",
+          "Organizational Development",
+          "Digital Transformation",
+        ],
+        image: "https://res.cloudinary.com/dfuh1q6ic/image/upload/c_crop,w_125,h_125,e_improve/v1756997521/Screenshot_from_2025-09-04_17-41-41_e9ikr4.png",
+        shortBio: "Distinguished expertise in organizational management and strategic leadership.",
+        fullBio: "Tom Sipul brings over two decades of distinguished expertise in organizational management and strategic leadership to his role as Chief Operating Officer. Backed by an MBA and core competencies in organizational development, public sector reforms, governance, program design, HR advisory, and infrastructure management, Tom’s educational foundation is deeply aligned with his professional success in driving transformational change. Throughout his career, he has led major interventions in strategy formulation, organizational restructuring, disaster recovery, and business process re-engineering, applying visionary and analytical insights to every venture. His leadership style is characterized by the ability to motivate and retain high-performance teams, forge strong partnerships with policymakers, development partners, and clients, and consistently drive operational excellence. Adept at aligning organizational goals with emerging technologies and governance frameworks, Tom inspires cross-functional collaboration and ensures program outcomes consistently exceed expectations. His technical expertise, strategic mindset, and people-centered leadership combine to optimize operations, reduce costs, enhance service quality, and position St. Sebastian Sports Academy as a model of sustainable growth and operational excellence.",
+        gradient: "from-violet-600 to-purple-700",
+      },
+    ],
+  };
+  export default teamData

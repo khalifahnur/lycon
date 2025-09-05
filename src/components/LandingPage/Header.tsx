@@ -4,19 +4,15 @@ import React, { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  //const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    setActiveDropdown(null);
-  };
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-  const toggleDropdown = (dropdown:any) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+   // setActiveDropdown(null);
   };
 
   return (
@@ -133,7 +129,7 @@ export default function Header() {
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Button className="bg-blue-500 text-white px-4 sm:px-6 py-2 rounded hover:bg-blue-700 transition-colors duration-200">
-              <Link href="/contact-form">Contact us</Link>
+              <Link href="/lycan-international/contact-form">Contact us</Link>
             </Button>
           </div>
 
@@ -147,149 +143,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`md:hidden fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out ${
-            isMenuOpen
-              ? "translate-x-0 opacity-100"
-              : "-translate-x-full opacity-0"
-          }`}
-        >
-          <div className="h-full flex flex-col justify-center items-center py-4 space-y-6 border-t border-gray-100 overflow-y-auto">
-            {/* Close Button */}
-            <button
-              onClick={toggleMenu}
-              className="absolute top-4 right-4 p-2 rounded-md text-gray-700 hover:text-black hover:bg-gray-50 transition-colors duration-200"
-            >
-              <X size={24} />
-            </button>
-
-            {/* Solutions Mobile */}
-            <div>
-              {/* Solutions */}
-              <button
-                onClick={() => toggleDropdown("solutions")}
-                className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-200 ease-in-out"
-              >
-                <span className="font-medium">Solutions</span>
-                <ChevronDown
-                  size={18}
-                  className={`transition-transform duration-200 ${
-                    activeDropdown === "solutions" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  activeDropdown === "solutions"
-                    ? "max-h-64 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="pl-6 py-2 space-y-2">
-                  {[
-                    "Muranga Seal Football Club",
-                    "St Sebastian Park",
-                    "St Sebastian Academy",
-                    "Flex by Lycan",
-                  ].map((item, idx) => (
-                    <a
-                      key={idx}
-                      href="#"
-                      className="block py-2 px-2 rounded-md text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200"
-                    >
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Success Stories */}
-            <a
-              href="#"
-              className="block px-4 py-3 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all duration-200 ease-in-out"
-            >
-              Success Stories
-            </a>
-
-            {/* Company */}
-            <div>
-              <button
-                onClick={() => toggleDropdown("company")}
-                className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-200 ease-in-out"
-              >
-                <span className="font-medium">Company</span>
-                <ChevronDown
-                  size={18}
-                  className={`transition-transform duration-200 ${
-                    activeDropdown === "company" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  activeDropdown === "company"
-                    ? "max-h-32 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="pl-6 py-2 space-y-2">
-                  {["About Us", "The Lycan Experience"].map((item, idx) => (
-                    <a
-                      key={idx}
-                      href="#"
-                      className="block py-2 px-2 rounded-md text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200"
-                    >
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Insights */}
-            <div>
-              <button
-                onClick={() => toggleDropdown("insights")}
-                className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-200 ease-in-out"
-              >
-                <span className="font-medium">Insights</span>
-                <ChevronDown
-                  size={18}
-                  className={`transition-transform duration-200 ${
-                    activeDropdown === "insights" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  activeDropdown === "insights"
-                    ? "max-h-40 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="pl-6 py-2 space-y-2">
-                  {["All Insights", "Blog"].map((item, idx) => (
-                    <a
-                      key={idx}
-                      href="#"
-                      className="block py-2 px-2 rounded-md text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200"
-                    >
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="pt-6 mt-6 border-t border-gray-200 flex justify-center">
-              <Button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-200">
-                <Link href="/contact-form">Contact us</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
+        <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={()=>setIsMenuOpen(!isMenuOpen)}  />
       </div>
     </header>
   );

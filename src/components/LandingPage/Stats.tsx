@@ -1,35 +1,33 @@
 'use client';
 
 import React, { useRef } from 'react';
-import CountUp from 'react-countup';
-import { Button } from '../ui/button';
-import { useInView } from 'react-intersection-observer';
-import { motion, easeOut } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import { motion, easeOut } from 'framer-motion';
 
 export default function Stats() {
-  const { ref, inView } = useInView({ triggerOnce: true });
+  //const { ref, inView } = useInView({ triggerOnce: true });
   const sectionRef = useRef(null);
 
   // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.3 },
-    },
-  };
+  // const containerVariants = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: { staggerChildren: 0.3 },
+  //   },
+  // };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } },
-  };
+  // const itemVariants = {
+  //   hidden: { opacity: 0, y: 40 },
+  //   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } },
+  // };
 
   return (
     <section
       ref={sectionRef}
-      className='bg-[#1A1A1A] text-white py-10 relative overflow-hidden'
+      className='bg-[#1A1A1A] text-white py-30 relative overflow-hidden'
     >
-      <div className='container mx-auto px-4'>
+      {/* <div className='container mx-auto px-4'>
         <motion.div
           className='flex flex-col lg:flex-row justify-between items-center gap-8'
           initial='hidden'
@@ -37,7 +35,6 @@ export default function Stats() {
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
-          {/* Left Content */}
           <motion.div
             className='w-full lg:w-1/2 text-center'
             variants={itemVariants}
@@ -58,7 +55,6 @@ export default function Stats() {
             </Button>
           </motion.div>
 
-          {/* Right Stats */}
           <motion.div
             ref={ref}
             className='w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6'
@@ -90,7 +86,7 @@ export default function Stats() {
             </motion.div>
           </motion.div>
         </motion.div>
-      </div>
+      </div> */}
 
       {/* Decorative SVG */}
       <div className='absolute bottom-0 left-0 w-[10rem] sm:w-[15rem] lg:w-[20rem] hidden lg:block'>

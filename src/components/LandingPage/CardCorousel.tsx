@@ -42,16 +42,16 @@ export default function CardCarousel() {
       location: "SSP",
       description:
         "A multi-purpose stadium and events ground. From football matches to weddings and concerts, St. Sebastian Park is designed to host unforgettable experiences for the community.",
-      image: "/mseal/ssp.jpeg",
+      image: "https://imgur.com/mWiZyBs.jpeg",
       url: "#",
     },
     {
       id: 3,
       title: "St. Sebastian Academy",
-      location: "Coming Soon",
+      location: "SSSA",
       description:
         "An upcoming school that blends academics with sports to nurture well-rounded learners and athletes. St. Sebastian Academy will be a hub for excellence, discipline, and opportunity.",
-      image: "/mseal/img-not-found.jpg",
+      image: "https://imgur.com/6qo28qJ.jpeg",
       url: "#",
     },
     {
@@ -100,7 +100,7 @@ export default function CardCarousel() {
     <section className="bg-[#FAFAFA]/50 py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <motion.div
+        {/* <motion.div
           className="text-center mb-16"
           variants={cardVariants}
           initial="hidden"
@@ -111,19 +111,16 @@ export default function CardCarousel() {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight"
             variants={item}
           >
-            Investment opportunities <br />
-            designed for growth.
+            Investment discussions <br />
+             are open.
           </motion.h2>
 
           <motion.div className="max-w-3xl mx-auto mb-8" variants={item}>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Every project we develop — from football to events and education —
-              is unique, just like the communities we serve. Explore Lycan’s
-              ventures, each crafted to create lasting impact and a thriving
-              future.
+              Join us in building the future of sports and education in East Africa.
             </p>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Desktop Grid */}
         <motion.div

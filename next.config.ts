@@ -13,6 +13,16 @@ const nextConfig = {
         protocol:"https",
         hostname:"nomadgroup.io",
         pathname:"**"
+      },
+      {
+        protocol:"https",
+        hostname:"res.cloudinary.com",
+        pathname:"**"
+      },
+      {
+        protocol:"https",
+        hostname:"imgur.com",
+        pathname:"**"
       }
     ],
   },

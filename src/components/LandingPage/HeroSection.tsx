@@ -2,11 +2,11 @@
 
 import React from "react";
 import { motion, Variants, easeOut } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Button } from "../ui/button";
+import { ArrowRight, BadgeDollarSign, GraduationCap } from "lucide-react";
 import CEOReport from "./Ceo";
 import StatsSection from "./HeroStats";
 import Image from "next/image";
+import Link from "next/link";
 
 // Parent container animation (controls stagger)
 const container: Variants = {
@@ -29,7 +29,7 @@ const item = {
 
 export default function HeroSection() {
   return (
-    <section  className="relative bg-gradient-to-br from-gray-50 to-white overflow-hidden min-h-screen flex items-center">
+    <section className="relative bg-gradient-to-br from-gray-50 to-white overflow-hidden min-h-screen flex items-center">
       {/* Background Shapes */}
       <div className="hidden lg:block absolute top-20 right-10 lg:right-32 w-32 h-32 lg:w-48 lg:h-48">
         <div className="w-full h-full bg-gradient-to-br from-green-400 to-green-500 rounded-full opacity-90" />
@@ -60,30 +60,62 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div className="space-y-4" variants={item}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Sports, events, and education —
-                <span className="block">redefined.</span>
-              </h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight sm:text-left">
+  Transforming African Sports
+  <span className="block">Excellence.</span>
+</h1>
             </motion.div>
 
             <motion.p
               className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl"
               variants={item}
             >
-              Discover opportunities that match your ambition. Lycan’s blend of
-              innovation, community impact, and vision makes growing with us
-              seamless and rewarding.
+              Building East Africa&apos;s premier sports and education ecosystem through St. Sebastian Sports Academy.
             </motion.p>
 
-            <motion.div className="pt-4" variants={item}>
+            {/* <motion.div className="pt-4" variants={item}>
               <Button className="inline-flex items-center h-10 px-8 py-4 bg-blue-600 text-white font-semibold rounded-sm hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 <a href="#get-started" className="text-lg">Get started</a>
                 <ArrowRight size={20} className="ml-2" />
               </Button>
+            </motion.div> */}
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3"
+            >
+              <Link
+                href="#"
+                aria-label="Discover Our Vision"
+                className="group inline-flex items-center gap-2 border px-5 py-3 text-sm font-semibold text-black backdrop-blur transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 hover:border-white/25 hover:bg-white/15"
+              >
+                <span>Discover Our Vision</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <span>|</span>
+              <Link
+                href="#"
+                aria-label="Join the Academy"
+                className="group inline-flex items-center gap-2 border px-5 py-3 text-sm font-semibold text-black backdrop-blur transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 hover:border-white/25 hover:bg-white/15"
+              >
+                <GraduationCap className="h-4 w-4" />
+                <span>Join the Academy</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <span>|</span>
+              <Link
+                href="#"
+                aria-label="Invest in Excellence"
+                className="group inline-flex items-center gap-2 border px-5 py-3 text-sm font-semibold text-black backdrop-blur transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 hover:border-white/25 hover:bg-white/15"
+              >
+                <BadgeDollarSign className="h-4 w-4" />
+                <span>Invest in Excellence</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
             </motion.div>
           </motion.div>
-
-          {/* Right Visual Content */}
           <motion.div
             className="relative lg:pl-8"
             variants={container}
@@ -102,8 +134,6 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
             </motion.div>
-
-            {/* Floating Secondary Image */}
             <motion.div
               className="absolute -bottom-6 -left-6 lg:-left-8 w-32 h-40 lg:w-40 lg:h-48 rounded-xl overflow-hidden shadow-xl border-4 border-white"
               initial={{ scale: 0.8, opacity: 0 }}
@@ -132,14 +162,10 @@ export default function HeroSection() {
                 <div className="text-xs">Success</div>
               </div>
             </motion.div>
-
-            {/* Background Accent Shapes */}
             <div className="absolute -top-8 -right-8 w-24 h-24 lg:w-32 lg:h-32 bg-blue-100 rounded-full opacity-60 -z-10" />
             <div className="absolute -bottom-8 -left-8 w-20 h-20 lg:w-28 lg:h-28 bg-purple-100 rounded-full opacity-60 -z-10" />
           </motion.div>
         </motion.div>
-
-        {/* Stats Section with delay */}
         <motion.div
           variants={item}
           initial="hidden"
