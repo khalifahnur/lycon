@@ -48,7 +48,7 @@ export default function StatsSection() {
       <div className="grid grid-cols-4 gap-6 sm:gap-8 text-center lg:mx-20">
         <div>
           <div className="text-lg sm:text-2xl font-extrabold text-blue-600">
-            {animate && <Counter target={33} suffix="Acres" />}
+            {animate && <Counter target={35} suffix="Acres" />}
           </div>
           <div className="text-sm sm:text-base text-gray-700 mt-1">
             Of purpose-built campus
