@@ -1,25 +1,52 @@
 "use client";
 
-import React, { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  //const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-   // setActiveDropdown(null);
   };
 
+  // Handle scroll effects
+  useEffect(() => {
+    const handleScroll = () => {
+      // Set isScrolled when scrolling past 50px
+      setIsScrolled(window.scrollY > 250);
+
+      // Determine active section
+      const sections = ["vision", "join", "invest", "about", "what-we-do", "our-team"];
+      let currentSection = "";
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element && window.scrollY >= element.offsetTop - 100) {
+          currentSection = section;
+        }
+      }
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="bg-[#FAFAFA] sticky top-0 z-50">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 rounded-lg ${
+        isScrolled
+          ? "bg-[#FAFAFA] md:backdrop-blur-md md:translate-y-2 px:10 lg:mx-20"
+          : "bg-transparent translate-y-0"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold text-black tracking-tight">
@@ -28,112 +55,39 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {/* Solutions Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center text-gray-700 hover:text-black font-medium transition-colors duration-200">
-                Solutions
-                <ChevronDown
-                  size={16}
-                  className="ml-1 transition-transform group-hover:rotate-180 duration-200"
-                />
-              </button>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2">
-                <div className="py-2">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-150"
-                  >
-                    Muranga Seal Football Club
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-150"
-                  >
-                    St Sebastian Park
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-150"
-                  >
-                    St Sebastian Academy
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <a
-              href="#"
-              className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
+          <nav className="hidden md:flex items-center justify-center flex-1 space-x-8">
+            <Link
+              href="/lycan-international/about"
+              className={`text-gray-700 hover:text-blue-500 font-medium transition-colors duration-200 ${
+                activeSection === "about" ? "border-b-2 border-yellow-400" : ""
+              }`}
             >
-              Success Stories
-            </a>
-
-            {/* Company Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200">
-                Company
-                <ChevronDown
-                  size={16}
-                  className="ml-1 transition-transform group-hover:rotate-180 duration-200"
-                />
-              </button>
-
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2">
-                <div className="py-2">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-150"
-                  >
-                    About Us
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-150"
-                  >
-                    The Lycan Experience
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Insights Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center text-gray-700 hover:text-black font-medium transition-colors duration-200">
-                Insights
-                <ChevronDown
-                  size={16}
-                  className="ml-1 transition-transform group-hover:rotate-180 duration-200"
-                />
-              </button>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2">
-                <div className="py-2">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-150"
-                  >
-                    All Insights
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-150"
-                  >
-                    Blog
-                  </a>
-                </div>
-              </div>
-            </div>
+              About Us
+            </Link>
+            <Link
+              href="#what-we-do"
+              className={`text-gray-700 hover:text-blue-500 font-medium transition-colors duration-200 ${
+                activeSection === "what-we-do" ? "border-b-2 border-yellow-400" : ""
+              }`}
+            >
+              What We Do
+            </Link>
+            <Link
+              href="#our-team"
+              className={`text-gray-700 hover:text-blue-500 font-medium transition-colors duration-200 ${
+                activeSection === "our-team" ? "border-b-2 border-yellow-400" : ""
+              }`}
+            >
+              Our Team
+            </Link>
           </nav>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button className="bg-blue-500 text-white px-4 sm:px-6 py-2 rounded hover:bg-blue-700 transition-colors duration-200">
-              <Link href="/lycan-international/contact-form">Contact us</Link>
+          <div className="hidden md:flex items-center">
+            <Button className="bg-blue-500 text-white px-4 sm:px-6 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200">
+              <Link href="/lycan-international/contact-form">Contact Us</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
             className="md:hidden p-2 rounded-md text-gray-700 hover:text-black hover:bg-gray-50 transition-colors duration-200"
@@ -142,8 +96,7 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={()=>setIsMenuOpen(!isMenuOpen)}  />
+        <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={() => setIsMenuOpen(!isMenuOpen)} />
       </div>
     </header>
   );

@@ -4,7 +4,7 @@ const AcademySection = () => {
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gray-300"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-[#1a1a1a]"></div>
         <div className="absolute top-20 right-0 w-1 h-40 bg-gray-800"></div>
         <div className="absolute bottom-40 left-0 w-60 h-1 bg-gray-400"></div>
         <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-black rotate-45"></div>
@@ -16,7 +16,7 @@ const AcademySection = () => {
         backgroundSize: '50px 50px'
       }}></div>
 
-      <div className="relative z-10 px-8 py-12 max-w-6xl mx-auto">
+      <div className="relative z-0 px-8 py-12 max-w-6xl mx-auto">
         <div className="border-b-4 border-black pb-8 mb-12">
           <div className="text-center mb-6">
             <div className="inline-block px-4 py-1 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4">

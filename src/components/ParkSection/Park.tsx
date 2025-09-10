@@ -4,7 +4,7 @@ const StSebastianParkSection = () => {
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-2 bg-gray-300"></div>
+        <div className="absolute top-0 left-0 w-full h-2 bg-[#1a1a1a]"></div>
         <div className="absolute top-32 right-0 w-2 h-64 bg-gray-800"></div>
         <div className="absolute bottom-10 left-0 w-96 h-2 bg-gray-400"></div>
         <div className="absolute top-1/4 left-1/3 w-4 h-4 bg-black transform rotate-45"></div>
@@ -17,7 +17,7 @@ const StSebastianParkSection = () => {
         backgroundSize: '60px 60px'
       }}></div>
 
-      <div className="relative z-10 px-8 py-12 max-w-7xl mx-auto">
+      <div className="relative z-0 px-8 py-12 max-w-7xl mx-auto">
         <div className="border-b-4 border-black pb-12 mb-16">
           <div className="grid md:grid-cols-3 gap-12 items-end">
             <div className="md:col-span-2">
@@ -52,8 +52,8 @@ const StSebastianParkSection = () => {
 
           <div className="mt-12 max-w-5xl">
             <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic border-l-4 border-gray-400 pl-8">
-              &aquot;A premier hospitality and conference center within a world-class stadium complex, 
-              unlocking East Africa&apos;s sports tourism and events market potential.&aquot;
+              &aquot; A premier hospitality and conference center within a world-class stadium complex, 
+              unlocking East Africa&apos;s sports tourism and events market potential. &aquot;
             </p>
           </div>
         </div>

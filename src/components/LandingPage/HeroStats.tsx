@@ -43,11 +43,11 @@ export default function StatsSection() {
   return (
     <div
       ref={ref}
-      className="mt-12 pt-8 border-t border-gray-200"
+      className=" py-10 bg-[#FAFAFA]"
     >
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8 text-center">
+      <div className="grid grid-cols-4 gap-6 sm:gap-8 text-center lg:mx-20">
         <div>
-          <div className="text-3xl sm:text-2xl font-extrabold text-blue-600">
+          <div className="text-lg sm:text-2xl font-extrabold text-blue-600">
             {animate && <Counter target={33} suffix="Acres" />}
           </div>
           <div className="text-sm sm:text-base text-gray-700 mt-1">
@@ -56,7 +56,7 @@ export default function StatsSection() {
         </div>
 
         <div>
-          <div className="text-3xl sm:text-2xl font-extrabold text-green-600">
+          <div className="text-lg sm:text-2xl font-extrabold text-green-600">
             {animate && <Counter target={9} suffix="K" />}
           </div>
           <div className="text-sm sm:text-base text-gray-700 mt-1">
@@ -65,7 +65,7 @@ export default function StatsSection() {
         </div>
 
         <div>
-          <div className="text-3xl sm:text-2xl font-extrabold text-yellow-500">
+          <div className="text-lg sm:text-2xl font-extrabold text-yellow-500">
             {animate && <Counter target={500} suffix="+" />}
           </div>
           <div className="text-sm sm:text-base text-gray-700 mt-1">
@@ -74,16 +74,7 @@ export default function StatsSection() {
         </div>
 
         <div>
-          <div className="text-3xl sm:text-2xl font-extrabold text-red-500">
-            {animate && <span>$ <Counter target={8.9} suffix=".9M" /></span> }
-          </div>
-          <div className="text-sm sm:text-base text-gray-700 mt-1">
-            Phase 1 development investment
-          </div>
-        </div>
-
-        <div>
-          <div className="text-3xl sm:text-2xl font-extrabold text-blue-600">
+          <div className="text-lg sm:text-2xl font-extrabold text-blue-600">
             {animate && <Counter target={85} suffix="% +" />}
           </div>
           <div className="text-sm sm:text-base text-gray-700 mt-1">

@@ -27,8 +27,27 @@ export default function CardCarousel() {
   const [isMobile, setIsMobile] = useState(false);
 
   const offerings = [
+    
     {
       id: 1,
+      title: "St. Sebastian Park",
+      location: "SSP",
+      description:
+        "A multi-purpose stadium and events ground. From football matches to weddings and concerts, St. Sebastian Park is designed to host unforgettable experiences for the community.",
+      image: "https://imgur.com/mWiZyBs.jpeg",
+      url: "/lycan-international/st-sebastian-academy",
+    },
+    {
+      id: 2,
+      title: "St. Sebastian Sports Academy",
+      location: "SSSA",
+      description:
+        "An upcoming school that blends academics with sports to nurture well-rounded learners and athletes. St. Sebastian Academy will be a hub for excellence, discipline, and opportunity.",
+      image: "https://imgur.com/6qo28qJ.jpeg",
+      url: "/lycan-international/st-sebastian-park",
+    },
+    {
+      id: 3,
       title: "Murang’a Seal Football Club",
       location: "First Team & Academy",
       description:
@@ -36,33 +55,15 @@ export default function CardCarousel() {
       image: "/mseal/mseal-team-photo.jpeg",
       url: "https://murangaseal.com",
     },
-    {
-      id: 2,
-      title: "St. Sebastian Park",
-      location: "SSP",
-      description:
-        "A multi-purpose stadium and events ground. From football matches to weddings and concerts, St. Sebastian Park is designed to host unforgettable experiences for the community.",
-      image: "https://imgur.com/mWiZyBs.jpeg",
-      url: "#",
-    },
-    {
-      id: 3,
-      title: "St. Sebastian Academy",
-      location: "SSSA",
-      description:
-        "An upcoming school that blends academics with sports to nurture well-rounded learners and athletes. St. Sebastian Academy will be a hub for excellence, discipline, and opportunity.",
-      image: "https://imgur.com/6qo28qJ.jpeg",
-      url: "#",
-    },
-    {
-      id: 4,
-      title: "MSeal Membership & Ticketing System",
-      location: "Digital Platform",
-      description:
-        "A modern membership and ticketing platform that connects fans with the club. Secure, seamless, and designed to strengthen the fan experience with exclusive access and rewards.",
-      image: "/mseal/img-not-found.jpg",
-      url: "https://mseal-membership.vercel.app/",
-    },
+    // {
+    //   id: 4,
+    //   title: "MSeal Membership & Ticketing System",
+    //   location: "Digital Platform",
+    //   description:
+    //     "A modern membership and ticketing platform that connects fans with the club. Secure, seamless, and designed to strengthen the fan experience with exclusive access and rewards.",
+    //   image: "/mseal/img-not-found.jpg",
+    //   url: "https://mseal-membership.vercel.app/",
+    // },
   ];
 
   useEffect(() => {
@@ -97,7 +98,7 @@ export default function CardCarousel() {
   };
 
   return (
-    <section className="bg-[#FAFAFA]/50 py-16 lg:py-24">
+    <section className="bg-[#FAFAFA]/50 py-16 lg:py-24" id="what-we-do">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         {/* <motion.div
@@ -174,7 +175,7 @@ export default function CardCarousel() {
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-200 ${
                     index === currentSlide
-                      ? "bg-emerald-500 scale-125"
+                      ? "bg-blue-500 scale-125"
                       : "bg-gray-300 hover:bg-gray-400"
                   }`}
                 />

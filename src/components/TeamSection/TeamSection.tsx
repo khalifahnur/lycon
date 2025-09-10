@@ -1,332 +1,463 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Users,
-  Award,
-  TrendingUp,
-  Briefcase,
-  ChevronDown,
-  ChevronUp,
-  Mail,
-  Linkedin,
-  MapPin,
-  X,
-} from "lucide-react";
-import teamData from "./TeamData";
-import Image from "next/image";
+import React from "react";
 
-const OrgChart = () => {
-  const [activeTab, setActiveTab] = useState("founders");
-  const [selectedPerson, setSelectedPerson] = useState("");
-  const [visibleCards, setVisibleCards] = useState<string[]>([]);
+const OrganizationStructureSection = () => {
+  return (
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-3 bg-black"></div>
+        <div className="absolute top-40 right-0 w-3 h-32 bg-gray-800"></div>
+        <div className="absolute bottom-32 left-0 w-80 h-3 bg-gray-400"></div>
+        <div className="absolute top-1/5 left-1/4 w-5 h-5 bg-black transform rotate-45"></div>
+        <div className="absolute top-3/4 right-1/4 w-4 h-4 bg-gray-600 transform rotate-45"></div>
+        <div className="absolute bottom-1/3 left-1/6 w-2 h-16 bg-gray-300"></div>
+      </div>
 
-  // Animate cards sequentially
-  useEffect(() => {
-    const ids = ["gordon", "robert", "christine", "bernard", "tom"];
-    ids.forEach((id, index) => {
-      setTimeout(() => {
-        setVisibleCards((prev) => [...prev, id]);
-      }, index * 300);
-    });
-  }, []);
-
-  const allTeamMembers = [...teamData.founders, ...teamData.management];
-
-  /* eslint-disable @typescript-eslint/no-explicit-any */
-  const MinimalCard = ({ person, onClick }: any) => {
-    const isVisible = visibleCards.includes(person.id);
-
-    const IconComponent = person.role.includes("Founder")
-      ? Award
-      : person.role.includes("CEO")
-      ? TrendingUp
-      : person.role.includes("CFO")
-      ? Briefcase
-      : Users;
-
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-        transition={{ duration: 0.6 }}
-        onClick={onClick}
-        className="cursor-pointer relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 max-w-sm mx-auto container "
-      >
-        <div className={`relative h-24 bg-[#e1e1e1] overflow-hidden`}>
-          <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
-          <div className="absolute top-3 right-3">
-            <div className="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
-              <MapPin className="w-3 h-3 text-white" />
+      <div className="relative z-10 px-8 py-12 max-w-7xl mx-auto">
+        <div className="border-b-4 border-black pb-12 mb-16">
+          <div className="text-center space-y-6">
+            <div className="inline-block px-8 py-3 bg-black text-white text-sm font-bold uppercase tracking-widest">
+              Corporate Leadership Structure
             </div>
-          </div>
-        </div>
 
-        <div className="relative px-4 pb-4">
-          <div className="flex justify-center -mt-10 mb-2">
-            <div className="relative">
-              <Image
-                src={person.image}
-                alt={`${person.name}'s profile`}
-                className="w-22 h-25 rounded-full object-cover border-3 border-white shadow-md"
-                loading="lazy"
-                width={22}
-                height={25}
-              />
-              <div
-                className={`absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-gradient-to-br ${person.gradient} flex items-center justify-center shadow-sm ring-2 ring-white`}
-              >
-                <IconComponent className="w-4 h-4 text-white" />
-              </div>
-            </div>
-          </div>
+            <h1 className="text-6xl md:text-8xl font-black text-black leading-none tracking-tighter">
+              LYCAN
+              <br />
+              <span className="text-5xl md:text-7xl text-gray-700 font-light">
+                INTERNATIONAL
+              </span>
+            </h1>
+            <div className="w-48 h-2 bg-black mx-auto"></div>
 
-          {/* Name & Role */}
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-gray-800">
-              {person.name}
-            </h3>
-            <p
-              className={`text-sm font-medium bg-gradient-to-r ${person.gradient} bg-clip-text text-transparent`}
-            >
-              {person.role}
+            <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic max-w-4xl mx-auto border-l-4 border-gray-400 pl-8">
+              &aquot;Building excellence through strategic leadership, operational
+              expertise, and unwavering commitment to transformational growth
+              across East Africa&aquot;
             </p>
           </div>
         </div>
-      </motion.div>
-    );
-  };
 
-  /* eslint-disable @typescript-eslint/no-explicit-any */
-  const DetailModal = ({ person, onClose }: any) => {
-    const [isExpanded, setIsExpanded] = useState(true);
+        <div className="mb-20">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black text-black uppercase tracking-wider mb-4">
+              ADVISORY BOARD
+            </h2>
+            <div className="w-24 h-2 bg-black mx-auto"></div>
+          </div>
 
-    const toggleExpand = () => setIsExpanded(!isExpanded);
-
-    const IconComponent = person.role.includes("Founder")
-      ? Award
-      : person.role.includes("CEO")
-      ? TrendingUp
-      : person.role.includes("CFO")
-      ? Briefcase
-      : Users;
-
-    return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        className="fixed inset-0 z-50 flex h-full items-center justify-center bg-black/50 backdrop-blur-sm"
-        onClick={onClose}
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.3 }}
-          className="relative bg-white rounded-2xl shadow-xl overflow-hidden max-w-7xl w-full grid md:grid-cols-2"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className={`relative bg-gradient-to-br ${person.gradient}`}>
-            <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
-            <div className="relative flex flex-col items-center justify-center h-full p-6">
-              <div className="relative mb-4">
-                <Image
-                  src={person.image}
-                  alt={`${person.name}'s profile`}
-                  className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-xl"
-                  loading="lazy"
-                  width={32}
-                  height={32}
-                />
-                <div
-                  className={`absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-gradient-to-br ${person.gradient} flex items-center justify-center shadow-lg ring-4 ring-white`}
-                >
-                  <IconComponent className="w-6 h-6 text-white" />
+          <div className="space-y-16">
+            {/* Robert Macharia */}
+            <div className="grid lg:grid-cols-3 gap-12 items-start border-t-2 border-gray-300 pt-16">
+              <div className="lg:col-span-1 lg:order-2">
+                <div className="bg-gray-800 text-white p-8">
+                  <h3 className="text-3xl font-bold uppercase tracking-wide mb-2">
+                    ROBERT MACHARIA
+                  </h3>
+                  <div className="w-16 h-1 bg-white"></div>
+                </div>
+                <div className="bg-gray-100 p-6 -mt-1">
+                  <div className="grid grid-cols-3 gap-3 text-center">
+                    <div className="bg-white p-2 text-xs">
+                      <div className="font-black text-black">20+</div>
+                      <div className="text-gray-600">Legal</div>
+                    </div>
+                    <div className="bg-white p-2 text-xs">
+                      <div className="font-black text-black">CPS-K</div>
+                      <div className="text-gray-600">Cert.</div>
+                    </div>
+                    <div className="bg-white p-2 text-xs">
+                      <div className="font-black text-black">FKF</div>
+                      <div className="text-gray-600">Chair</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              {/* Name & Role */}
-              <h3 className="text-xl font-bold text-white mb-1">
-                {person.name}
-              </h3>
-              <p className="font-semibold text-white/90 text-sm mb-2">
-                {person.role}
-              </p>
-              {/* Location */}
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-white/90" />
-                <span className="text-white/90 text-sm font-medium">
-                  {person.location}
-                </span>
-              </div>
-            </div>
-          </div>
 
-          <div className="relative p-6">
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 transition"
-              aria-label="Close modal"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
-            {/* Highlights */}
-            <div className="flex flex-wrap gap-2 mb-4">
-              {
-              /* eslint-disable @typescript-eslint/no-explicit-any */
-              person.highlights.map(({ highlight, i }: any) => (
-                <span
-                  key={i}
-                  className={`px-3 py-1.5 bg-gradient-to-r ${person.gradient}/10 text-xs font-medium text-gray-700 rounded-full border border-gray-200`}
-                >
-                  {highlight}
-                </span>
-              ))}
-            </div>
-            <motion.p
-              initial={{ height: "auto" }}
-              animate={{ height: isExpanded ? "auto" : "2.5rem" }}
-              transition={{ duration: 0.3 }}
-              className="text-gray-600 text-sm leading-relaxed mb-4 overflow-hidden"
-            >
-              {isExpanded ? person.fullBio : person.shortBio}
-            </motion.p>
-
-            {/* Actions */}
-            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-              <div className="flex gap-2">
-                <a
-                  href={`mailto:${person.name
-                    .toLowerCase()
-                    .replace(" ", ".")}@lycaninternational.com`}
-                  className="w-8 h-8 rounded-full bg-gray-100 hover:bg-blue-500 hover:text-white flex items-center justify-center transition duration-200"
-                  aria-label={`Email ${person.name}`}
-                >
-                  <Mail className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white flex items-center justify-center transition duration-200"
-                  aria-label={`${person.name}'s LinkedIn`}
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-              </div>
-              <button
-                onClick={toggleExpand}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium text-xs bg-gradient-to-r ${person.gradient} text-white hover:shadow-lg transition duration-200`}
-                aria-expanded={isExpanded}
-              >
-                {isExpanded ? "Show Less" : "Learn More"}
-                {isExpanded ? (
-                  <ChevronUp className="w-3 h-3" />
-                ) : (
-                  <ChevronDown className="w-3 h-3" />
-                )}
-              </button>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
-    );
-  };
-
-  return (
-    <>
-      <div className="min-h-screen relative">
-        <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-3 bg-gray-300"></div>
-      </div>
-        <div
-          className="absolute inset-0 opacity-4"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px)`,
-            backgroundSize: "40px 40px",
-          }}
-        ></div>
-        <div className="relative z-10 px-8 py-12 max-w-7xl mx-auto">
-          <div
-            className="text-center mb-12"
-          >
-            <div className="border-b-4 border-black pb-12 mb-16">
-              <div className="text-center space-y-6">
-                <div className="inline-block px-8 py-3 bg-black text-white text-sm font-bold uppercase tracking-widest">
-                  Corporate Leadership Structure
+              <div className="lg:col-span-2 lg:order-1 space-y-6">
+                <div className="bg-gray-50 border-l-4 border-gray-800 p-6">
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    Robert Macharia is a seasoned legal professional with over
+                    20 years of progressively senior experience. His expertise
+                    covers commercial litigation, gaming and ICT regulation, and
+                    corporate governance. An accredited Corporate Governance
+                    Auditor, CPS-K, and Notary Public, Robert has represented
+                    clients in Kenya&apos;s High Court and Court of Appeal and
+                    actively contributes to professional bodies including the
+                    Law Society of Kenya and Institute of Certified Public
+                    Secretaries.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    Over the years he has built a distinguished career spanning
+                    corporate law, litigation, governance, and regulatory
+                    compliance. Currently serving as Global Head of Legal,
+                    Director, and Company Secretary at SportPesa Kenya and
+                    Techpitch Ltd, he provides strategic legal oversight across
+                    Africa and Europe. This includes contract negotiation,
+                    cross-border structuring, and regulatory engagement.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed">
+                    Robert is a passionate football administrator. He is the
+                    founder of Murang&apos;a Seal FC and St. Sebastian Sports School,
+                    and Chairperson of the Federation of Kenyan Football (FKF)
+                    Murang&apos;a County Branch, and key national committees of the
+                    Federation. His expertise bridges law, business, and sport,
+                    and is underpinned by a commitment to integrity, strategic
+                    leadership, and community development.
+                  </p>
                 </div>
 
-                <h1 className="text-6xl md:text-8xl font-black text-black leading-none tracking-tighter">
-                  LYCAN
-                  <br />
-                  <span className="text-5xl md:text-7xl text-gray-700 font-light">
-                    INTERNATIONAL
-                  </span>
-                </h1>
-                <div className="w-48 h-2 bg-black mx-auto"></div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white border-l-4 border-gray-600 p-4">
+                    <h4 className="font-black text-gray-900 uppercase tracking-wide mb-3">
+                      Legal Expertise
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-800"></div>
+                        <span>Commercial Litigation</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-800"></div>
+                        <span>Corporate Governance</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-800"></div>
+                        <span>Regulatory Compliance</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-800"></div>
+                        <span>Cross-border Structuring</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-white border-l-4 border-gray-600 p-4">
+                    <h4 className="font-black text-gray-900 uppercase tracking-wide mb-3">
+                      Sports Leadership
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-600"></div>
+                        <span>Murang&apos;a Seal FC Founder</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-600"></div>
+                        <span>St. Sebastian Co-founder</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-600"></div>
+                        <span>FKF County Chairman</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-600"></div>
+                        <span>National Committee Member</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic max-w-4xl mx-auto border-l-4 border-gray-400 pl-8">
-                  &quot;Building excellence through strategic leadership, operational
-                  expertise, and unwavering commitment to transformational
-                  growth across East Africa&quot;
-                </p>
+            {/* Gordon Denoon */}
+            <div className="grid lg:grid-cols-3 gap-12 items-start">
+              <div className="lg:col-span-1">
+                <div className="bg-black text-white p-8">
+                  <h3 className="text-3xl font-bold uppercase tracking-wide mb-2">
+                    GORDON DENOON
+                  </h3>
+                  <div className="w-16 h-1 bg-white"></div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-2 space-y-6">
+                <div className="bg-gray-50 border-l-4 border-black p-6">
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    Gordon Denoon brings more than twenty years of seasoned
+                    experience in strategic planning, operations management, and
+                    business development. Born in Uganda and raised in
+                    Australia, Gordon&apos;s career has been built around translating
+                    complex challenges into clear, actionable strategies across
+                    public service and non-governmental sectors.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    His academic background and professional journey are rooted
+                    in fostering resilience and innovation, with a passion for
+                    disaster preparedness, response, and recovery. Having lived
+                    and worked in Kenya for over seven years, Gordon offers a
+                    deep understanding of local dynamics, cultural
+                    sensitivities, and the business environment.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed">
+                    His proven strengths in stakeholder engagement, operational
+                    planning, project design, and program management are
+                    complemented by a disciplined approach to risk mitigation
+                    and problem-solving. Gordon&apos;s diverse experience and
+                    collaborative leadership style make him exceptionally
+                    equipped to drive St. Sebastian Sports Academy&apos;s growth and
+                    operational excellence in Kenya and the broader East African
+                    region.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white border-l-4 border-gray-400 p-4">
+                    <h4 className="font-black text-gray-900 uppercase tracking-wide mb-3">
+                      Core Expertise
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-black"></div>
+                        <span>Strategic Planning & Operations</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-black"></div>
+                        <span>Stakeholder Engagement</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-black"></div>
+                        <span>Risk Management & Mitigation</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-black"></div>
+                        <span>Program & Project Management</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-white border-l-4 border-gray-400 p-4">
+                    <h4 className="font-black text-gray-900 uppercase tracking-wide mb-3">
+                      Specialization
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-600"></div>
+                        <span>Disaster Preparedness & Response</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-600"></div>
+                        <span>Business Development</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-600"></div>
+                        <span>Resilience & Innovation</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-600"></div>
+                        <span>Cultural Integration</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-4 gap-12 items-start">
+              <div className="lg:col-span-1">
+                <div className="bg-black text-white p-8">
+                  <h3 className="text-2xl font-bold uppercase tracking-wide mb-2">
+                    CHRISTINE MACHARIA DENOON
+                  </h3>
+                  <div className="w-16 h-1 bg-white"></div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-3 space-y-6">
+                <div className="bg-gray-50 border-l-4 border-black p-8">
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    Christine Macharia Denoon brings over fifteen years of
+                    leadership excellence in commercial strategy, risk
+                    management, and strategic procurement to her role as Chief
+                    Executive Officer. She has overseen large and complex
+                    programmes across diverse international contexts,
+                    demonstrating a rare ability to translate governance
+                    frameworks into measurable competitive advantages.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    Christine holds an Advanced Contract and Commercial
+                    Practitioner (CCMAP) accreditation, underscoring her strong
+                    commercial acumen and her expertise in contract negotiation,
+                    supplier relationship management, and stakeholder
+                    engagement. Her career is marked by a focus on high-value
+                    partnerships, business development initiatives, innovative
+                    funding models, and data-driven improvements to contract
+                    performance.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed">
+                    A proactive risk manager and professional member of the Risk
+                    Management Institution of Australasia (RMIA), she ensures
+                    contractual obligations transform into actionable
+                    deliverables that drive cost savings, mitigate risks, and
+                    achieve successful project execution. Her management
+                    expertise, combined with a people-focused leadership style,
+                    fosters continuous improvement, collaboration, and
+                    sustainable growth.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="bg-white border-l-4 border-black p-4">
+                    <h4 className="font-black text-gray-900 uppercase tracking-wide text-sm mb-3">
+                      Strategy & Risk
+                    </h4>
+                    <div className="space-y-2 text-xs text-gray-700">
+                      <div>• Commercial Strategy</div>
+                      <div>• Risk Management (RMIA)</div>
+                      <div>• Governance Frameworks</div>
+                    </div>
+                  </div>
+                  <div className="bg-white border-l-4 border-black p-4">
+                    <h4 className="font-black text-gray-900 uppercase tracking-wide text-sm mb-3">
+                      Procurement
+                    </h4>
+                    <div className="space-y-2 text-xs text-gray-700">
+                      <div>• Strategic Sourcing</div>
+                      <div>• Contract Negotiation</div>
+                      <div>• Supplier Relations</div>
+                    </div>
+                  </div>
+                  <div className="bg-white border-l-4 border-black p-4">
+                    <h4 className="font-black text-gray-900 uppercase tracking-wide text-sm mb-3">
+                      Leadership
+                    </h4>
+                    <div className="space-y-2 text-xs text-gray-700">
+                      <div>• Stakeholder Engagement</div>
+                      <div>• Team Development</div>
+                      <div>• Operational Excellence</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid lg:grid-cols-3 gap-12 items-start border-t-2 border-gray-300 pt-16">
+              <div className="lg:col-span-1 lg:order-2">
+                <div className="bg-gray-800 text-white p-8">
+                  <h3 className="text-3xl font-bold uppercase tracking-wide mb-2">
+                    BERNARD CHAURO
+                  </h3>
+                  <div className="w-16 h-1 bg-white"></div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-2 lg:order-1 space-y-6">
+                <div className="bg-gray-50 border-l-4 border-gray-800 p-6">
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    Benard Chauro is a performance-driven operational manager,
+                    internal auditor, and financial accountant with over a
+                    decade of progressive experience in enhancing operational
+                    integrity and driving organizational performance. His
+                    educational foundation in finance and accounting, coupled
+                    with extensive practical exposure, has equipped him with
+                    keen analytical rigor and creative problem-solving
+                    abilities.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    Throughout his career, Benard has demonstrated expertise in
+                    designing audit programs, ensuring compliance, uncovering
+                    process optimization opportunities, mastering financial
+                    accounting, tax preparation, and strategic budgeting. His
+                    data-driven approach to financial planning consistently
+                    delivers measurable improvements in efficiency and cost
+                    control.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed">
+                    As a natural leader and mentor, Benard fosters
+                    high-performing teams through clear communication,
+                    empowerment, and hands-on guidance, translating complex
+                    financial and operational concepts into concise, actionable
+                    insights for diverse stakeholders.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white border-l-4 border-gray-600 p-4">
+                    <h4 className="font-black text-gray-900 uppercase tracking-wide mb-3">
+                      Financial Expertise
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-700">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-800"></div>
+                        <span>Audit Program Design</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-800"></div>
+                        <span>Cost Control</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-800"></div>
+                        <span>Strategic Budgeting</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-800"></div>
+                        <span>Tax Preparation</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-gray-800"></div>
+                        <span>Process Optimization</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid lg:grid-cols-4 gap-12 items-start">
+              <div className="lg:col-span-1">
+                <div className="bg-black text-white p-8">
+                  <h3 className="text-2xl font-bold uppercase tracking-wide mb-2">
+                    TOM SIPUL
+                  </h3>
+                  <div className="w-16 h-1 bg-white"></div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-3 space-y-6">
+                <div className="bg-gray-50 border-l-4 border-black p-8">
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    Tom Sipul brings over two decades of distinguished expertise
+                    in organizational management and strategic leadership to his
+                    role as Chief Operating Officer. Backed by an MBA and core
+                    competencies in organizational development, public sector
+                    reforms, governance, program design, HR advisory, and
+                    infrastructure management.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed mb-6">
+                    Throughout his career, he has led major interventions in
+                    strategy formulation, organizational restructuring, disaster
+                    recovery, and business process re-engineering, applying
+                    visionary and analytical insights to every venture. His
+                    leadership style is characterized by the ability to motivate
+                    and retain high-performance teams.
+                  </p>
+                  <p className="text-gray-800 leading-relaxed">
+                    Adept at aligning organizational goals with emerging
+                    technologies and governance frameworks, Tom inspires
+                    cross-functional collaboration and ensures program outcomes
+                    consistently exceed expectations. His technical expertise,
+                    strategic mindset, and people-centered leadership optimize
+                    operations and enhance service quality.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="bg-white border-l-4 border-black p-4">
+                    <h4 className="font-black text-gray-900 uppercase tracking-wide text-sm mb-3">
+                      Operational Excellence
+                    </h4>
+                    <div className="space-y-2 text-xs text-gray-700">
+                      <div>• Strategy Formulation</div>
+                      <div>• Organizational Development</div>
+                      <div>• Process Re-engineering</div>
+                    </div>
+                  </div>
+                  <div className="bg-white border-l-4 border-black p-4">
+                    <div className="space-y-2 text-xs text-gray-700">
+                      <div>Infrastructure Management</div>
+                      <div>• Team Leadership</div>
+                      <div>• Governance Frameworks</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Tabs */}
-          <div className="flex justify-center mb-12">
-            <div className="inline-flex bg-white rounded-full shadow-md p-1">
-              <button
-                onClick={() => setActiveTab("founders")}
-                className={`px-6 py-2 rounded-full font-medium transition ${
-                  activeTab === "founders"
-                    ? "bg-blue-600 text-white"
-                    : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                Founders
-              </button>
-              <button
-                onClick={() => setActiveTab("management")}
-                className={`px-6 py-2 rounded-full font-medium transition ${
-                  activeTab === "management"
-                    ? "bg-blue-600 text-white"
-                    : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                Management
-              </button>
-            </div>
-          </div>
-
-          {/* Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {(activeTab === "founders"
-              ? teamData.founders
-              : teamData.management
-            ).map((person) => (
-              <MinimalCard
-                key={person.id}
-                person={person}
-                onClick={() => setSelectedPerson(person.id)}
-              />
-            ))}
-          </div>
-
-          {/* Modal */}
-          <AnimatePresence>
-            {selectedPerson && (
-              <DetailModal
-                person={allTeamMembers.find((p) => p.id === selectedPerson)}
-                onClose={() => setSelectedPerson("")}
-              />
-            )}
-          </AnimatePresence>
         </div>
-        <div className="mt-20 pt-12 mb-10 border-t-4 border-black">
+        <div className="mt-20 pt-12 border-t-4 border-black">
           <div className="text-center space-y-8">
             <h2 className="text-5xl md:text-6xl font-black text-black tracking-tighter leading-none">
               LEADERSHIP
@@ -340,20 +471,11 @@ const OrgChart = () => {
               expertise to drive transformational growth and operational
               excellence across East Africa&apos;s sports and education sectors.
             </p>
-
-            {/* <div className="flex flex-wrap justify-center gap-6 pt-8">
-              <button className="px-12 py-4 bg-black text-white font-bold text-sm uppercase tracking-widest hover:bg-gray-800 transition-colors duration-300">
-                Contact Leadership
-              </button>
-              <button className="px-12 py-4 border-2 border-black text-black font-bold text-sm uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300">
-                View Full Profiles
-              </button>
-            </div> */}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default OrgChart;
+export default OrganizationStructureSection;

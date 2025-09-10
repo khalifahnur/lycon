@@ -10,7 +10,6 @@ import {
   AlertCircle,
 } from "lucide-react";
 
-
 interface FormData {
   firstName: string;
   lastName: string;
@@ -131,9 +130,12 @@ export default function ContactForm() {
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
             <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Thank You!
+            </h2>
             <p className="text-gray-600 mb-6">
-              Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
+              Your message has been sent successfully. We&apos;ll get back to
+              you within 24 hours.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
@@ -152,10 +154,13 @@ export default function ContactForm() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Get In Touch
+          </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have a question or want to work together? We&apos;d love to hear from you. 
-            Send us a message and we&apos;ll respond as soon as possible.
+            Have a question or want to work together? We&apos;d love to hear
+            from you. Send us a message and we&apos;ll respond as soon as
+            possible.
           </p>
         </div>
 
@@ -164,7 +169,7 @@ export default function ContactForm() {
           <div className="lg:col-span-1">
             <div className="bg-slate-900 rounded-2xl p-8 text-white h-fit">
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <Mail className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
@@ -173,22 +178,22 @@ export default function ContactForm() {
                     <p className="text-slate-300">hello@lycan.com</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <Phone className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold">Phone</p>
-                    <p className="text-slate-300">+254 123-4567</p>
+                    <p className="text-slate-300">+254 790 689192</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold">Office</p>
+                    <p className="font-semibold">Physical Address</p>
                     <p className="text-slate-300">
-                      Nairobi<br />
-                      Nairobi<br />
+                       Kabarnet Rd, Woodley Estate
+                      <br />
                       Nairobi, Kenya
                     </p>
                   </div>
@@ -210,7 +215,10 @@ export default function ContactForm() {
                 {/* Name Fields */}
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label
+                      htmlFor="firstName"
+                      className="block text-sm font-semibold text-gray-700 mb-2"
+                    >
                       First Name *
                     </label>
                     <input
@@ -220,7 +228,7 @@ export default function ContactForm() {
                       value={formData.firstName}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 ${
-                        errors.firstName ? 'border-red-500' : 'border-gray-300'
+                        errors.firstName ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="John"
                     />
@@ -233,7 +241,10 @@ export default function ContactForm() {
                   </div>
 
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label
+                      htmlFor="lastName"
+                      className="block text-sm font-semibold text-gray-700 mb-2"
+                    >
                       Last Name *
                     </label>
                     <input
@@ -243,7 +254,7 @@ export default function ContactForm() {
                       value={formData.lastName}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 ${
-                        errors.lastName ? 'border-red-500' : 'border-gray-300'
+                        errors.lastName ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="Doe"
                     />
@@ -259,7 +270,10 @@ export default function ContactForm() {
                 {/* Email and Phone */}
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-semibold text-gray-700 mb-2"
+                    >
                       Email Address *
                     </label>
                     <input
@@ -269,7 +283,7 @@ export default function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 ${
-                        errors.email ? 'border-red-500' : 'border-gray-300'
+                        errors.email ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="john@example.com"
                     />
@@ -282,7 +296,10 @@ export default function ContactForm() {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-semibold text-gray-700 mb-2"
+                    >
                       Phone Number
                     </label>
                     <input
@@ -292,7 +309,7 @@ export default function ContactForm() {
                       value={formData.phone}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 ${
-                        errors.phone ? 'border-red-500' : 'border-gray-300'
+                        errors.phone ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="+254 123-4567"
                     />
@@ -307,7 +324,10 @@ export default function ContactForm() {
 
                 {/* Company */}
                 <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Company
                   </label>
                   <input
@@ -323,7 +343,10 @@ export default function ContactForm() {
 
                 {/* Subject */}
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Subject *
                   </label>
                   <input
@@ -333,7 +356,7 @@ export default function ContactForm() {
                     value={formData.subject}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 ${
-                      errors.subject ? 'border-red-500' : 'border-gray-300'
+                      errors.subject ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="How can we help you?"
                   />
@@ -347,7 +370,10 @@ export default function ContactForm() {
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Message *
                   </label>
                   <textarea
@@ -357,7 +383,7 @@ export default function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-vertical ${
-                      errors.message ? 'border-red-500' : 'border-gray-300'
+                      errors.message ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="Tell us more about your project or inquiry..."
                   />
@@ -375,7 +401,7 @@ export default function ContactForm() {
                     type="submit"
                     disabled={isSubmitting}
                     className={`w-full sm:w-auto px-8 py-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 transition-all duration-200 flex items-center justify-center space-x-2 ${
-                      isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                      isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                   >
                     {isSubmitting ? (
