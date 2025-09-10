@@ -42,7 +42,7 @@ export default function Header() {
       className={`sticky top-0 z-50 transition-all duration-300 rounded-lg ${
         isScrolled
           ? "bg-[#FAFAFA] md:backdrop-blur-md md:translate-y-2 px:10 lg:mx-20"
-          : "bg-transparent translate-y-0"
+          : "bg-[#FAFAFA] translate-y-0"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
