@@ -34,7 +34,7 @@ export default function CardCarousel() {
       description:
         "A multi-purpose stadium and events ground. From football matches to weddings and concerts, St. Sebastian Park is designed to host unforgettable experiences for the community.",
       image: "https://imgur.com/mWiZyBs.jpeg",
-      url: "/lycan-international/st-sebastian-academy",
+      url: "/lycan-international/st-sebastian-park",
     },
     {
       id: 2,
@@ -42,7 +42,7 @@ export default function CardCarousel() {
       description:
         "An upcoming school that blends academics with sports to nurture well-rounded learners and athletes. St. Sebastian Academy will be a hub for excellence, discipline, and opportunity.",
       image: "https://imgur.com/6qo28qJ.jpeg",
-      url: "/lycan-international/st-sebastian-park",
+      url: "/lycan-international/st-sebastian-academy",
     },
     {
       id: 3,
