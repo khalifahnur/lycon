@@ -43,7 +43,7 @@ export default function HeroSection() {
         muted={isMuted}
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://dpmojlqmkchenhsw.public.blob.vercel-storage.com/ssp.mp4"
+        src="https://st-sebastian-video-bucket-2025.s3.us-east-1.amazonaws.com/ssp.mp4"
         poster="/assets/video-poster.jpg"
         aria-label="Background video showcasing St. Sebastian Sports Academy"
       />
