@@ -31,7 +31,6 @@ export default function CardCarousel() {
     {
       id: 1,
       title: "St. Sebastian Park",
-      location: "SSP",
       description:
         "A multi-purpose stadium and events ground. From football matches to weddings and concerts, St. Sebastian Park is designed to host unforgettable experiences for the community.",
       image: "https://imgur.com/mWiZyBs.jpeg",
@@ -40,7 +39,6 @@ export default function CardCarousel() {
     {
       id: 2,
       title: "St. Sebastian Sports Academy",
-      location: "SSSA",
       description:
         "An upcoming school that blends academics with sports to nurture well-rounded learners and athletes. St. Sebastian Academy will be a hub for excellence, discipline, and opportunity.",
       image: "https://imgur.com/6qo28qJ.jpeg",
@@ -49,7 +47,6 @@ export default function CardCarousel() {
     {
       id: 3,
       title: "Murang’a Seal Football Club",
-      location: "First Team & Academy",
       description:
         "Lycan proudly supports Murang’a Seal FC, nurturing both the senior team and academy players. Our investment builds pathways for young talent to shine locally and internationally.",
       image: "/mseal/mseal-team-photo.jpeg",
@@ -200,16 +197,7 @@ function PropertyCard({ itm }: any) {
   return (
     <div className="group cursor-pointer">
       <a href={itm.url} className="block">
-        {/* Image Container */}
         <div className="relative overflow-hidden rounded-lg mb-4 aspect-[4/3]">
-          {/* Location Tag */}
-          <div className="absolute top-4 left-4 z-10">
-            <span className="inline-block px-3 py-1 bg-yellow-400 text-black text-xs font-semibold uppercase tracking-wide rounded">
-              {itm.location}
-            </span>
-          </div>
-
-          {/* Image with Hover Effect */}
           <Image
             src={itm.image}
             alt={itm.title}

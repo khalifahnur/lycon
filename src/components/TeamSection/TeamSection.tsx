@@ -15,10 +15,6 @@ const OrganizationStructureSection = () => {
       <div className="relative z-10 px-8 py-12 max-w-7xl mx-auto">
         <div className="border-b-4 border-black pb-12 mb-16">
           <div className="text-center space-y-6">
-            <div className="inline-block px-8 py-3 bg-black text-white text-sm font-bold uppercase tracking-widest">
-              Corporate Leadership Structure
-            </div>
-
             <h1 className="text-6xl md:text-8xl font-black text-black leading-none tracking-tighter">
               LYCAN
               <br />
@@ -29,9 +25,9 @@ const OrganizationStructureSection = () => {
             <div className="w-48 h-2 bg-black mx-auto"></div>
 
             <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic max-w-4xl mx-auto border-l-4 border-gray-400 pl-8">
-              &aquot;Building excellence through strategic leadership, operational
+              Building excellence through strategic leadership, operational
               expertise, and unwavering commitment to transformational growth
-              across East Africa&aquot;
+              across East Africa;
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ export default function Cta() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
         <div
           className="relative flex flex-col items-center justify-center text-center 
-          bg-[#3636FF] rounded-lg overflow-hidden px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-16 lg:py-20 w-full max-w-5xl"
+          bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg overflow-hidden px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-16 lg:py-20 w-full max-w-5xl"
         >
           <div className="absolute left-0 bottom-0 w-20 sm:w-24 md:w-32 lg:w-40 h-20 sm:h-24 md:h-32 lg:h-40 bg-[url('/assets/cta-l-m.svg')] bg-no-repeat bg-contain mix-blend-multiply"></div>
 

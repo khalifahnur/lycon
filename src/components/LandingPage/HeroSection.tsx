@@ -83,7 +83,7 @@ export default function HeroSection() {
             <motion.div className="space-y-4" variants={item}>
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight drop-shadow-xl font-poppins">
                 Transforming African Sports
-                <span className="block text-blue-500">Excellence.</span>
+                <span className="block text-blue-500">Excellence</span>
               </h1>
             </motion.div>
 

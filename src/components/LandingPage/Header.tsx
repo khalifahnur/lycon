@@ -4,38 +4,43 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle scroll effects
   useEffect(() => {
     const handleScroll = () => {
-      // Set isScrolled when scrolling past 50px
-      setIsScrolled(window.scrollY > 250);
+      setIsScrolled(window.scrollY > 50);
 
-      // Determine active section
-      const sections = ["vision", "join", "invest", "about", "what-we-do", "our-team"];
-      let currentSection = "";
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element && window.scrollY >= element.offsetTop - 100) {
-          currentSection = section;
+      if (pathname === "/") {
+        const sections = ["what-we-do", "our-team",];
+        let currentSection = "";
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element && window.scrollY >= element.offsetTop - 100) {
+            currentSection = section;
+          }
         }
+        setActiveSection(currentSection);
       }
-      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
+
+  useEffect(() => {
+    setActiveSection(pathname === "/" ? "" : pathname.split("#")[1] || "");
+  }, [pathname]);
 
   return (
     <header
@@ -50,7 +55,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold text-black tracking-tight">
-                Lycan
+                Lycan International
               </span>
             </Link>
           </div>
@@ -59,23 +64,23 @@ export default function Header() {
             <Link
               href="/lycan-international/about"
               className={`text-gray-700 hover:text-blue-500 font-medium transition-colors duration-200 ${
-                activeSection === "about" ? "border-b-2 border-yellow-400" : ""
+                pathname === "/lycan-international/about" ? "border-b-2 border-blue-500" : ""
               }`}
             >
               About Us
             </Link>
             <Link
-              href="#what-we-do"
+              href="/#what-we-do"
               className={`text-gray-700 hover:text-blue-500 font-medium transition-colors duration-200 ${
-                activeSection === "what-we-do" ? "border-b-2 border-yellow-400" : ""
+                pathname === "/" && activeSection === "what-we-do" ? "border-b-2 border-blue-500" : ""
               }`}
             >
               What We Do
             </Link>
             <Link
-              href="#our-team"
+              href="/#our-team"
               className={`text-gray-700 hover:text-blue-500 font-medium transition-colors duration-200 ${
-                activeSection === "our-team" ? "border-b-2 border-yellow-400" : ""
+                pathname === "/" && activeSection === "our-team" ? "border-b-2 border-blue-500" : ""
               }`}
             >
               Our Team
@@ -91,6 +96,7 @@ export default function Header() {
           <button
             onClick={toggleMenu}
             className="md:hidden p-2 rounded-md text-gray-700 hover:text-black hover:bg-gray-50 transition-colors duration-200"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
