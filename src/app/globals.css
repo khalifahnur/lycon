@@ -132,4 +132,7 @@
 html {
   scroll-behavior: smooth;
 }
+.playfair {
+  font-family: var(--font-playfair_display);
+}
 

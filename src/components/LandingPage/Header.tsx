@@ -44,7 +44,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 rounded-lg ${
+      className={`playfair sticky top-0 z-50 transition-all duration-300 rounded-lg ${
         isScrolled
           ? "bg-[#FAFAFA] md:backdrop-blur-md md:translate-y-2 px:10 lg:mx-20"
           : "bg-[#FAFAFA] translate-y-0"
@@ -88,7 +88,7 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center">
-            <Button className="bg-blue-500 text-white px-4 sm:px-6 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200">
+            <Button className="bg-blue-500 text-black px-4 sm:px-6 py-2 rounded-sm hover:bg-blue-700 transition-colors duration-200">
               <Link href="/lycan-international/contact-form">Contact Us</Link>
             </Button>
           </div>

@@ -45,7 +45,7 @@ export default function StatsSection() {
       ref={ref}
       className=" py-10 bg-[#FAFAFA]"
     >
-      <div className="grid grid-cols-4 gap-6 sm:gap-8 text-center lg:mx-20">
+      <div className=" playfair grid grid-cols-4 gap-6 sm:gap-8 text-center lg:mx-20">
         <div>
           <div className="text-lg sm:text-2xl font-extrabold text-blue-600">
             {animate && <Counter target={35} suffix="Acres" />}

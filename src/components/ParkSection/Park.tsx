@@ -2,7 +2,7 @@ import React from 'react';
 
 const StSebastianParkSection = () => {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className=" playfair min-h-screen bg-white relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-2 bg-[#1a1a1a]"></div>
         <div className="absolute top-32 right-0 w-2 h-64 bg-gray-800"></div>
@@ -52,8 +52,8 @@ const StSebastianParkSection = () => {
 
           <div className="mt-12 max-w-5xl">
             <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic border-l-4 border-gray-400 pl-8">
-              &aquot; A premier hospitality and conference center within a world-class stadium complex, 
-              unlocking East Africa&apos;s sports tourism and events market potential. &aquot;
+              A premier hospitality and conference center within a world-class stadium complex, 
+              unlocking East Africa&apos;s sports tourism and events market potential.
             </p>
           </div>
         </div>

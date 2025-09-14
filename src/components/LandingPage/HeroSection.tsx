@@ -81,14 +81,14 @@ export default function HeroSection() {
             viewport={{ once: true }}
           >
             <motion.div className="space-y-4" variants={item}>
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight drop-shadow-xl font-poppins">
+              <h1 className="playfair text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight drop-shadow-xl font-poppins">
                 Transforming African Sports
                 <span className="block text-blue-500">Excellence</span>
               </h1>
             </motion.div>
 
             <motion.p
-              className="text-base sm:text-lg lg:text-2xl text-gray-100 leading-relaxed max-w-md sm:max-w-lg lg:max-w-xl drop-shadow-md font-poppins"
+              className="playfair text-base sm:text-lg lg:text-2xl text-gray-100 leading-relaxed max-w-md sm:max-w-lg lg:max-w-xl drop-shadow-md font-poppins"
               variants={item}
             >
               Building East Africa&apos;s premier sports and education ecosystem through St. Sebastian Sports Academy.

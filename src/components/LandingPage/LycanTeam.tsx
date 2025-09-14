@@ -29,7 +29,7 @@ const fadeInUp: Variants = {
 
 export default function LycanTeam() {
   return (
-    <section className="bg-[#1A1A1A] text-white py-10 relative" id="our-team">
+    <section className="playfair bg-[#1A1A1A] text-white py-10 relative" id="our-team">
       <div className="container mx-auto px-4">
         <motion.div
           className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:mb-30"

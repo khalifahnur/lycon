@@ -95,7 +95,7 @@ export default function CardCarousel() {
   };
 
   return (
-    <section className="bg-[#FAFAFA]/50 py-16 lg:py-24" id="what-we-do">
+    <section className="playfair bg-[#FAFAFA]/50 py-16 lg:py-24" id="what-we-do">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         {/* <motion.div

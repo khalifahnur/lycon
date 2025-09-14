@@ -2,15 +2,13 @@ import React from "react";
 
 export default function Cta() {
   return (
-    <section className="bg-[#FAFAFA] py-10 sm:py-12 md:py-16 lg:py-20">
+    <section className="playfair bg-[#FAFAFA] py-10 sm:py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
         <div
           className="relative flex flex-col items-center justify-center text-center 
-          bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg overflow-hidden px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-16 lg:py-20 w-full max-w-5xl"
+          bg-blue-500 rounded-lg overflow-hidden px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-16 lg:py-20 w-full max-w-5xl"
         >
           <div className="absolute left-0 bottom-0 w-20 sm:w-24 md:w-32 lg:w-40 h-20 sm:h-24 md:h-32 lg:h-40 bg-[url('/assets/cta-l-m.svg')] bg-no-repeat bg-contain mix-blend-multiply"></div>
-
-          <div className="absolute right-0 bottom-0 w-0 sm:w-0 md:w-32 lg:w-45 h-20 sm:h-0 md:h-32 lg:h-100 bg-[url('/assets/cta-r-m.svg')] bg-no-repeat bg-contain mix-blend-multiply"></div>
           <div className="max-w-3xl flex flex-col items-center gap-4 sm:gap-6">
             <h3 className="text-white text-2xl sm:text-3xl md:text-4xl font-medium leading-tight">
               Join us in building the future of sports and education in East Africa.

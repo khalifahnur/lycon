@@ -2,7 +2,7 @@ import React from 'react';
 
 const AcademySection = () => {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className="playfair min-h-screen bg-white relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-1 bg-[#1a1a1a]"></div>
         <div className="absolute top-20 right-0 w-1 h-40 bg-gray-800"></div>
@@ -36,8 +36,8 @@ const AcademySection = () => {
 
           <div className="text-center max-w-4xl mx-auto">
             <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic border-l-4 border-gray-400 pl-6 text-left">
-              &quot;Pioneering residential institution transforming youth development through elite football training, 
-              accredited Cambridge academics, and comprehensive wellness programs.&quot;
+              Pioneering residential institution transforming youth development through elite football training, 
+              accredited Cambridge academics, and comprehensive wellness programs.
             </p>
           </div>
           <div className="flex justify-center space-x-12 mt-8 pt-6 border-t border-gray-300">

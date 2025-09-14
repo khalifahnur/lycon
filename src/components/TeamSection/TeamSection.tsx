@@ -2,7 +2,7 @@ import React from "react";
 
 const OrganizationStructureSection = () => {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className="playfair min-h-screen bg-white relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-3 bg-black"></div>
         <div className="absolute top-40 right-0 w-3 h-32 bg-gray-800"></div>

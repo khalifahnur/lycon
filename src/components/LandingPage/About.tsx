@@ -25,7 +25,7 @@ const card = {
 
 const About = () => {
   return (
-    <section className="bg-[#1A1A1A]">
+    <section className="playfair bg-[#1A1A1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         
         <motion.div

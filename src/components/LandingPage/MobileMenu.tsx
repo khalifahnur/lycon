@@ -11,7 +11,7 @@ interface MobileMenuProps {
 export default function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) {
   return (
     <div
-      className={`md:hidden transition-all duration-300 ease-in-out ${
+      className={`playfair md:hidden transition-all duration-300 ease-in-out ${
         isMenuOpen ? "h-screen opacity-100" : "max-h-0 opacity-0"
       } overflow-hidden bg-[#FAFAFA] rounded-b-lg`}
     >

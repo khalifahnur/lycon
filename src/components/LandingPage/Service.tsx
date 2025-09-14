@@ -19,7 +19,7 @@ export default function Service() {
   };
 
   return (
-    <section className="bg-[#FAFAFA] relative py-6 sm:py-8 lg:py-10 overflow-hidden">
+    <section className="playfair bg-[#FAFAFA] relative py-6 sm:py-8 lg:py-10 overflow-hidden">
       <div className="container relative mx-auto flex justify-center px-4 sm:px-6 lg:px-8">
         <motion.div
           className="flex max-lg:flex-col max-lg:pb-[3rem] justify-between gap-6 sm:gap-8 lg:gap-[4rem] w-full max-w-7xl"
