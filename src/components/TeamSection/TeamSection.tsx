@@ -300,7 +300,7 @@ const OrganizationStructureSection = () => {
                   </div>
                   <div className="bg-white border-l-4 border-black p-4">
                     <h4 className="font-black text-gray-900 uppercase tracking-wide text-sm mb-3">
-                      Procurement
+                      Commercial
                     </h4>
                     <div className="space-y-2 text-xs text-gray-700">
                       <div>• Strategic Sourcing</div>
