@@ -24,14 +24,14 @@ export default function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) 
           About Us
         </Link>
         <Link
-          href="#what-we-do"
+          href="/#what-we-do"
           className="text-gray-700 hover:text-black font-medium text-lg transition-colors duration-200"
           onClick={toggleMenu}
         >
           What We Do
         </Link>
         <Link
-          href="#our-team"
+          href="/#our-team"
           className="text-gray-700 hover:text-black font-medium text-lg transition-colors duration-200"
           onClick={toggleMenu}
         >
