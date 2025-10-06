@@ -9,6 +9,7 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   firstName: string;
@@ -20,8 +21,9 @@ interface FormData {
   message: string;
 }
 
-// Define errors (all fields optional)
-type FormErrors = Partial<Record<keyof FormData, string>>;
+type FormErrors = Partial<Record<keyof FormData, string>> & {
+  submit?: string;
+};
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -37,6 +39,12 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const EMAILJS_CONFIG = {
+    SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '', 
+    TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '', 
+    PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '',
+  };
 
   const validateForm = (): FormErrors => {
     const newErrors: FormErrors = {};
@@ -97,13 +105,25 @@ export default function ContactForm() {
     setErrors({});
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        company: formData.company || 'Not provided',
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'khalifahnur1095@gmail.com',
+        reply_to: formData.email,
+      };
 
-      if (response.ok) {
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      if (result.status === 200) {
         setIsSubmitted(true);
         setFormData({
           firstName: "",
@@ -115,10 +135,13 @@ export default function ContactForm() {
           message: "",
         });
       } else {
-        throw new Error("Failed to send message");
+        throw new Error('Failed to send email');
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error sending email:", error);
+      setErrors({ 
+        submit: "Failed to send message. Please try again later." 
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -165,7 +188,6 @@ export default function ContactForm() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Information */}
           <div className="lg:col-span-1">
             <div className="bg-slate-900 rounded-2xl p-8 text-white h-fit">
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
@@ -175,7 +197,7 @@ export default function ContactForm() {
                   <Mail className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold">Email</p>
-                    <p className="text-slate-300">hello@lycan.com</p>
+                    <p className="text-slate-300">info@lycaninternational.com</p>
                   </div>
                 </div>
 
@@ -208,11 +230,9 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name Fields */}
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -267,7 +287,6 @@ export default function ContactForm() {
                   </div>
                 </div>
 
-                {/* Email and Phone */}
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -322,7 +341,6 @@ export default function ContactForm() {
                   </div>
                 </div>
 
-                {/* Company */}
                 <div>
                   <label
                     htmlFor="company"
@@ -341,7 +359,6 @@ export default function ContactForm() {
                   />
                 </div>
 
-                {/* Subject */}
                 <div>
                   <label
                     htmlFor="subject"
@@ -368,7 +385,6 @@ export default function ContactForm() {
                   )}
                 </div>
 
-                {/* Message */}
                 <div>
                   <label
                     htmlFor="message"
@@ -397,6 +413,12 @@ export default function ContactForm() {
 
                 {/* Submit Button */}
                 <div className="pt-4">
+                  {errors.submit && (
+                    <p className="mb-4 text-sm text-red-600 flex items-center">
+                      <AlertCircle className="w-4 h-4 mr-1" />
+                      {errors.submit}
+                    </p>
+                  )}
                   <button
                     type="submit"
                     disabled={isSubmitting}
