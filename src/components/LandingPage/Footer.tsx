@@ -3,7 +3,6 @@
 import React from "react";
 import { motion, easeOut } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 
 const container = {
   hidden: { opacity: 0 },
