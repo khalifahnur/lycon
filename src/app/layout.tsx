@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "Lycan International",
   description: "Lycan International",
   verification: {
-    google: "google3cbf70aa2534b55b.html",
+    google: "google3cbf70aa2534b55b",
   },
 };
 
