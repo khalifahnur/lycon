@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     "community development",
   ],
   verification: {
-    google: "google3cbf70aa2534b55b",
+    google: "fqcN59T90ThKgnH_1GtmCbLdQenHAgptXADPZzXaoeg",
   },
   openGraph: {
     title: "Lycan International",
