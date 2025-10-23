@@ -13,9 +13,9 @@ export default function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) 
     <div
       className={`playfair md:hidden transition-all duration-300 ease-in-out ${
         isMenuOpen ? "h-screen opacity-100" : "max-h-0 opacity-0"
-      } overflow-hidden bg-[#FAFAFA] rounded-b-lg`}
+      } overflow-hidden bg-[#FAFAFA]  flex flex-col`}
     >
-      <div className="flex flex-col items-center py-4 space-y-4">
+      <div className="flex-1 flex flex-col items-center py-4 space-y-4">
         <Link
           href="/lycan-international/about"
           className="text-gray-700 hover:text-black font-medium text-lg transition-colors duration-200"
@@ -45,6 +45,7 @@ export default function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) 
           Contact Us
         </Link>
       </div>
+      
     </div>
   );
 }

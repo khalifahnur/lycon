@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, easeOut } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const container = {
   hidden: { opacity: 0 },
@@ -38,8 +39,9 @@ export default function Footer() {
           >
             <div className="mb-8 lg:mb-0">
               <Link href="/" className="inline-block">
-                <h2 className="text-2xl font-bold tracking-wide">Lycan International</h2>
+                <h2 className="text-2xl font-bold tracking-wide">Lycan International</h2>             
               </Link>
+              
             </div>
           </motion.div>
 

@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,17 +47,18 @@ export default function Header() {
     <header
       className={`playfair sticky top-0 z-50 transition-all duration-300 rounded-lg ${
         isScrolled
-          ? "bg-[#FAFAFA] md:backdrop-blur-md md:translate-y-2 px:10 lg:mx-20"
+          ? "bg-[#FAFAFA] md:backdrop-blur-md md:translate-y-2 px:10 lg:mx-10"
           : "bg-[#FAFAFA] translate-y-0"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4  lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
+          <div className="flex-shrink-0 ">
+            <Link href="/" className="shrink-0">
               <span className="text-2xl font-bold text-black tracking-tight">
                 Lycan International
               </span>
+              
             </Link>
           </div>
 
