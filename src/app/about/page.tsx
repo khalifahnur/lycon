@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About | Lycan International",
     description: "Learn about Lycan International’s mission, vision, and values.",
-    url: "https://www.lycaninternational.com/lycan-international/about",
+    url: "https://www.lycaninternational.com/about",
   },
 };
 

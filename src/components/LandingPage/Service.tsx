@@ -86,7 +86,7 @@ export default function Service() {
                     "Welcome to St Sebastian Park, a dedicated 100-room hospitality and conference center within the 9,000-seat stadium complex, unlocking East Africa’s growing sports tourism and events market.",
                   desc: "The Park creates a year-round revenue engine, combining sports, business, and entertainment under one destination. By integrating accommodation ... ",
                   imgAlt: "St. Sebastian Park",
-                  descUrl: "/lycan-international/st-sebastian-park",
+                  descUrl: "/st-sebastian-park",
                   imgUrl: "https://imgur.com/mWiZyBs.jpeg",
                 },
                 {
@@ -96,7 +96,7 @@ export default function Service() {
                     "St. Sebastian Sports Academy is a pioneering residential institution that fills a critical gap in East Africa's youth development landscape.",
                   desc: "We offer a fully integrated model combining elite football training, accredited academic instruction, wellness services, and commercial event hosting.",
                   imgAlt: "St. Sebastian Sports Academy",
-                  descUrl: "/lycan-international/st-sebastian-academy",
+                  descUrl: "/st-sebastian-academy",
                   imgUrl: "https://imgur.com/tKsCi0g.jpeg",
                 },
               ].map((entry, index) => (

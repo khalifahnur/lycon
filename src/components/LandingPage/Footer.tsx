@@ -54,8 +54,8 @@ export default function Footer() {
               </h3>
               <nav className="space-y-3">
                 {[
-                  ["St. Sebastian Park", "/lycan-international/st-sebastian-park"],
-                  ["St. Sebastian Academy", "/lycan-international/st-sebastian-academy"],
+                  ["St. Sebastian Park", "/st-sebastian-park"],
+                  ["St. Sebastian Academy", "/st-sebastian-academy"],
                   ["Murang’a Seal FC", "/"],
                 ].map(([title, link]) => (
                   <a
@@ -75,13 +75,13 @@ export default function Footer() {
               </h3>
               <nav className="space-y-3">
                 <a
-                  href="/lycan-international/about"
+                  href="/about"
                   className="block text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-sm"
                 >
                   About Us
                 </a>
                 <a
-                  href="/lycan-international/contact-form"
+                  href="/contact-form"
                   className="block text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-sm"
                 >
                   Contact

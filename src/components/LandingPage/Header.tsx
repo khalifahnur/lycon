@@ -63,9 +63,9 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center justify-center flex-1 space-x-8">
             <Link
-              href="/lycan-international/about"
+              href="/about"
               className={`text-gray-700 hover:text-blue-500 font-medium transition-colors duration-200 ${
-                pathname === "/lycan-international/about" ? "border-b-2 border-blue-500" : ""
+                pathname === "/about" ? "border-b-2 border-blue-500" : ""
               }`}
             >
               About Us
@@ -90,7 +90,7 @@ export default function Header() {
 
           <div className="hidden md:flex items-center">
             <Button className="bg-blue-500 text-black px-4 sm:px-6 py-2 rounded-sm hover:bg-blue-700 transition-colors duration-200">
-              <Link href="/lycan-international/contact-form">Contact Us</Link>
+              <Link href="/contact-form">Contact Us</Link>
             </Button>
           </div>
 

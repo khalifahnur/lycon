@@ -11,31 +11,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     {
-      url: `${baseUrl}/lycan-international/st-sebastian-academy`,
+      url: `${baseUrl}/st-sebastian-academy`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/lycan-international/st-sebastian-park`,
+      url: `${baseUrl}/st-sebastian-park`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/lycan-international/about`,
+      url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/lycan-international/executive`,
+      url: `${baseUrl}/executive`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/lycan-international/contact-form`,
+      url: `${baseUrl}/contact-form`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,

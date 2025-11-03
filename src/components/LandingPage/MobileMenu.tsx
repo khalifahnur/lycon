@@ -17,7 +17,7 @@ export default function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) 
     >
       <div className="flex-1 flex flex-col items-center py-4 space-y-4">
         <Link
-          href="/lycan-international/about"
+          href="/about"
           className="text-gray-700 hover:text-black font-medium text-lg transition-colors duration-200"
           onClick={toggleMenu}
         >
@@ -38,7 +38,7 @@ export default function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) 
           Our Team
         </Link>
         <Link
-          href="/lycan-international/contact-form"
+          href="/contact-form"
           className="text-blue-500 hover:text-blue-700 font-medium text-lg transition-colors duration-200"
           onClick={toggleMenu}
         >

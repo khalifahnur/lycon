@@ -20,7 +20,7 @@ export default function Cta() {
 
             <p className="font-bold">Investment discussions are open.</p>
             <a
-              href="/lycan-international/contact-form"
+              href="/contact-form"
               className="bg-white text-black px-4 sm:px-6 py-2 sm:py-2 rounded-md font-medium shadow hover:bg-gray-100 transition text-sm sm:text-base"
             >
               Contact Us

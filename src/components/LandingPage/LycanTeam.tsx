@@ -54,7 +54,7 @@ export default function LycanTeam() {
               smarter, more impactful, and future-ready.
             </p>
             <Button className="bg-blue-500 text-white px-4 py-2 sm:px-6 sm:py-2 rounded flex-row justify-between">
-              <Link href={"/lycan-international/executive"} className="">
+              <Link href={"/executive"} className="">
                 <span>Our Team</span>
               </Link>
               <ArrowRight
