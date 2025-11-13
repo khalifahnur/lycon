@@ -50,7 +50,7 @@ export default function CardCarousel() {
       description:
         "Lycan proudly supports Murang’a Seal FC, nurturing both the senior team and academy players. Our investment builds pathways for young talent to shine locally and internationally.",
       image: "/mseal/mseal-team-photo.jpeg",
-      url: "https://murangaseal.com",
+      url: "https://www.murangaseal.com",
     },
     // {
     //   id: 4,
